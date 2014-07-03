@@ -32,7 +32,7 @@
       "iso_checksum_type": "sha1",
       "iso_url": "http://mirror.yandex.ru/debian-cd/7.5.0/amd64/iso-dvd/debian-7.5.0-amd64-DVD-1.iso",
       "net_device": "virtio-net",
-      "output_directory": "image/7/x86_64/qemu",
+      "output_directory": "images/7/x86_64/qemu",
       "qemuargs": [
         [
           "-device",
@@ -40,7 +40,7 @@
         ],
         [
           "-drive",
-          "if=none,cache=unsafe,id=drive0,discard=unmap,file=image/7/x86_64/qemu/debian-7-x86_64.raw"
+          "if=none,cache=unsafe,id=drive0,discard=unmap,file=images/7/x86_64/qemu/debian-7-x86_64.raw"
         ],
         [
           "-device",
