@@ -23,16 +23,16 @@
       "disk_interface": "scsi",
       "disk_size": 5000,
       "floppy_files": [
-          "files/*"
+          "floppy/*"
       ],
       "format": "raw",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "efbd5a9d41437f6ea2f16d6743bb9d4a21502897",
+      "iso_checksum": "24274ef90e6dc8a54721c53c323610af74fe0b87",
       "iso_checksum_type": "sha1",
-      "iso_url": "http://mirror.yandex.ru/debian-cd/7.5.0/amd64/iso-dvd/debian-7.5.0-amd64-DVD-1.iso",
+      "iso_url": "http://mirror.yandex.ru/debian-cd/7.5.0/multi-arch/iso-cd/debian-7.5.0-amd64-i386-netinst.iso",
       "net_device": "virtio-net",
-      "output_directory": "images/7/x86_64/qemu",
+      "output_directory": "output/debian-7-x86_64-qemu",
       "qemuargs": [
         [
           "-device",
@@ -40,7 +40,7 @@
         ],
         [
           "-drive",
-          "if=none,cache=unsafe,id=drive0,discard=unmap,file=images/7/x86_64/qemu/debian-7-x86_64.raw"
+          "if=none,cache=unsafe,id=drive0,discard=unmap,file=output/debian-7-x86_64-qemu/debian-7-x86_64.raw"
         ],
         [
           "-device",
@@ -66,6 +66,19 @@
         "scripts/cleanup.sh"
       ],
       "type": "shell"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "strip",
+      "keep_input_artifact": false,
+      "output": "output/debian-7-x86_64-strip/"
+    },
+    {
+      "type": "compress",
+      "format": "gzip",
+      "keep_input_artifact": false,
+      "output": "output/debian-7-x86_64-compress/"
     }
   ]
 }
