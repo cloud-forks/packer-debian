@@ -1,6 +1,8 @@
 #!/bin/sh -ex
 
-update-grub
+apt-get -y --force-yes update
+apt-get -y --force-yes dist-upgrade
+apt-get -y --force-yes upgrade
 
 #ls -Rlo /boot/
 
