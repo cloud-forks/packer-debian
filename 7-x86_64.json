@@ -73,14 +73,16 @@
     }
   ],
   "post-processors": [
-    {
-      "type": "strip",
-      "output": "output/debian-7-x86_64-strip/"
-    },
-    {
-      "type": "compress",
-      "format": "gzip",
-      "output": "output/debian-7-x86_64-compress/"
-    }
+    [
+      {
+        "type": "strip",
+        "output": "output/debian-7-x86_64-strip/"
+      },
+      {
+        "type": "compress",
+        "format": "gzip",
+        "output": "output/debian-7-x86_64-compress/"
+      }
+    ]
   ]
 }
