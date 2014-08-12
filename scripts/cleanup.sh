@@ -2,14 +2,12 @@
 
 # Clean up
 
-printf 'auto eth0\niface eth0 inet6 auto\n' > '/etc/network/interfaces'
-printf 'auto eth0:0\niface eth0:0 inet dhcp\n' >> '/etc/network/interfaces'
-
 apt-get -y --force-yes purge $(dpkg --list |grep '^rc' |awk '{print $2}')
 apt-get -y --force-yes purge $(dpkg --list |egrep 'linux-image-[0-9]' |awk '{print $3,$2}' |sort -nr |tail -n +2 |grep -v $(uname -r) |awk '{ print $2}')
 apt-get -y --force-yes autoremove --purge
 apt-get -y --force-yes clean
 apt-get -y --force-yes autoclean
+
 update-grub
 
 # Removing leftover leases and persistent rules
