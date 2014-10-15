@@ -33,3 +33,4 @@ EOF
 
 sync
 
+fstrim -v /

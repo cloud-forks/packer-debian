@@ -53,6 +53,10 @@
         [
           "-device",
           "virtio-net,netdev=user.0"
+        ],
+        [
+          "-machine",
+          "type=pc,accel=kvm"
         ]
       ],
       "shutdown_command": "shutdown -h now",
@@ -81,10 +85,6 @@
   ],
   "post-processors": [
     [
-      {
-        "type": "strip",
-        "output": "output/debian-7-x86_64-strip/"
-      },
       {
         "type": "compress",
         "format": "gzip",
