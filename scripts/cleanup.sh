@@ -33,4 +33,4 @@ EOF
 
 sync
 
-fstrim -v /
+fstrim -v / || echo dummy
