@@ -1,4 +1,4 @@
 #!/bin/sh -x
 
-reboot
-
+which systemctl && systemctl reboot
+which systemctl || reboot
