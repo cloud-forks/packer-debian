@@ -88,6 +88,10 @@
         "type": "compress",
         "format": "bgzf",
         "output": "output/debian-8-x86_32-compress/"
+      },
+      {
+        "type": "checksum",
+        "output": "output/debian-8-x86_32-compress/"
       }
     ]
   ]
