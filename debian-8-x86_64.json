@@ -91,7 +91,6 @@
       },
       {
         "type": "checksum",
-        "format": ["md5"],
         "output": "output/debian-8-x86_64-compress/"
       }
     ]
