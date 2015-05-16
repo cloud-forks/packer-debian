@@ -1,4 +1,0 @@
-debian-8-x86_64.raw:
-  compsize: 5242880000
-  origsize: 354105862
-  comptype: bgzf
