@@ -23,6 +23,7 @@
       "disk_interface": "scsi",
       "disk_size": 5000,
       "disk_cache": "unsafe",
+      "disk_discard": "unmap",
       "floppy_files": [
           "floppy/*"
       ],
@@ -40,22 +41,6 @@
           "-m",
           "512"
         ],
-        [
-          "-device",
-          "virtio-scsi-pci,id=scsi0"
-        ],
-        [
-          "-drive",
-          "if=none,cache=unsafe,id=drive0,discard=unmap,file=output/debian-8-x86_64-qemu/debian-8-x86_64"
-        ],
-        [
-          "-device",
-          "scsi-hd,bus=scsi0.0,drive=drive0"
-        ],
-        [
-          "-device",
-          "virtio-net,netdev=user.0"
-        ]
       ],
       "shutdown_command": "shutdown -h now",
       "ssh_password": "packer",
