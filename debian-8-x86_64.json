@@ -34,7 +34,7 @@
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.yandex.ru/debian-cd/current/multi-arch/iso-cd/debian-8.0.0-amd64-i386-netinst.iso",
       "net_device": "virtio-net",
-      "output_directory": "output/debian-8-x86_64-qemu/",
+      "output_directory": "output/{{.BuildName}}-{{.Provider}}/",
       "machine_type": "pc-i440fx-1.7",
       "qemuargs": [
         [
@@ -73,11 +73,11 @@
         "type": "compress",
         "format": "bgzf",
         "metadata": true,
-        "output": "output/debian-8-x86_64-compress/"
+        "output": "output/{{.BuildName}}-compress/"
       },
       {
         "type": "checksum",
-        "output": "output/debian-8-x86_64-compress/"
+        "output": "output/{{.BuildName}}-compress/"
       }
     ]
   ]
