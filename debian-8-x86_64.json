@@ -40,7 +40,7 @@
         [
           "-m",
           "512"
-        ],
+        ]
       ],
       "shutdown_command": "shutdown -h now",
       "ssh_password": "packer",
