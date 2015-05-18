@@ -1,7 +1,7 @@
 
 install:
 	$(eval TPL := $(filter-out $@,$(MAKECMDGOALS)))
-	$(eval objects := $(wildcard $(shell jq -r '.["post-processors"][][.["post-processors"][] | length - 1 ].output' $(TPL).json)/*))
+	$(eval objects := $(wildcard $(shell jq -r '.["post-processors"][][.["post-processors"][] | length - 1 ].output' $(TPL).json)/* | sed "s|{{.BuildName}}|$(TPL)|g" ))
 	$(foreach object,$(objects), $(shell cp -f $(object) $(DESTDIR)/))
 
 build:

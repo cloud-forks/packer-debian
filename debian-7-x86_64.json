@@ -40,22 +40,6 @@
         [
           "-m",
           "512"
-        ],
-        [
-          "-device",
-          "virtio-scsi-pci,id=scsi0"
-        ],
-        [
-          "-drive",
-          "if=none,cache=unsafe,id=drive0,discard=unmap,file=output/debian-7-x86_64-qemu/debian-7-x86_64"
-        ],
-        [
-          "-device",
-          "scsi-hd,bus=scsi0.0,drive=drive0"
-        ],
-        [
-          "-device",
-          "virtio-net,netdev=user.0"
         ]
       ],
       "shutdown_command": "shutdown -h now",
