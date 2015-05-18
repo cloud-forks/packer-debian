@@ -23,6 +23,7 @@
       "disk_interface": "scsi",
       "disk_size": 5000,
       "disk_cache": "unsafe",
+      "disk_discard": "unmap",
       "floppy_files": [
           "floppy/*"
       ],
