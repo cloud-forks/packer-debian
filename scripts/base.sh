@@ -4,6 +4,7 @@ apt-get -y --force-yes update
 apt-get -y --force-yes dist-upgrade
 apt-get -y --force-yes upgrade
 
+apt-get -y --force-yes install resolvconf
 
 cat <<EOF > /etc/resolv.conf
 nameserver 2001:4860:4860::8888
@@ -39,4 +40,3 @@ sed -i 's|#GRUB_DISABLE_LINUX_UUID.*|GRUB_DISABLE_LINUX_UUID=true|g' /etc/defaul
 sed -i 's|#GRUB_DISABLE_RECOVERY.*|GRUB_DISABLE_RECOVERY=true|g' /etc/default/grub
 update-initramfs -k all -u
 update-grub
-
