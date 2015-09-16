@@ -27,10 +27,12 @@
       "disk_size": 5000,
       "disk_cache": "unsafe",
       "disk_discard": "unmap",
+      "disk_shrink": true,
+      "disk_compress": true,
       "floppy_files": [
           "floppy/*"
       ],
-      "format": "raw",
+      "format": "qcow2",
       "headless": true,
       "http_directory": "http",
       "iso_checksum": "http://mirror.yandex.ru/debian-cd/current/multi-arch/iso-cd/MD5SUMS",
@@ -74,19 +76,5 @@
       "source": "files/80-hotplug-cpu-mem.rules",
       "destination": "/etc/udev/rules.d/80-hotplug-cpu-mem.rules"
     }
-  ],
-  "post-processors": [
-    [
-      {
-        "type": "compress",
-        "format": "bgzf",
-        "metadata": true,
-        "output": "output/{{user `name`}}-compress/"
-      },
-      {
-        "type": "checksum",
-        "output": "output/{{user `name`}}-compress/"
-      }
-    ]
   ]
 }
