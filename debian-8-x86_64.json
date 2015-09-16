@@ -1,4 +1,7 @@
 {
+ "variables": {
+    "name": "debian-8-x86_64"
+  },
   "builders": [
     {
       "accelerator": "kvm",
@@ -32,9 +35,9 @@
       "http_directory": "http",
       "iso_checksum": "http://mirror.yandex.ru/debian-cd/current/multi-arch/iso-cd/MD5SUMS",
       "iso_checksum_type": "md5",
-      "iso_url": "http://mirror.yandex.ru/debian-cd/current/multi-arch/iso-cd/debian-8.2.0-amd64-i386-netinst.iso",
+      "iso_urls": [ "http://mirror.yandex.ru/debian-cd/current/multi-arch/iso-cd/debian-8.2.0-amd64-i386-netinst.iso" ],
       "net_device": "virtio-net",
-      "output_directory": "output/debian-8-x86_64-qemu/",
+      "output_directory": "output/{{user `name`}}-qemu/",
       "machine_type": "pc-i440fx-1.7",
       "qemuargs": [
         [
@@ -47,7 +50,7 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "1200s",
       "type": "qemu",
-      "vm_name": "debian-8-x86_64"
+      "vm_name": "{{user `name`}}"
     }
   ],
   "provisioners": [
@@ -78,11 +81,11 @@
         "type": "compress",
         "format": "bgzf",
         "metadata": true,
-        "output": "output/debian-8-x86_64-compress/"
+        "output": "output/{{user `name`}}-compress/"
       },
       {
         "type": "checksum",
-        "output": "output/debian-8-x86_64-compress/"
+        "output": "output/{{user `name`}}-compress/"
       }
     ]
   ]
