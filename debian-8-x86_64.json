@@ -35,7 +35,6 @@
       "format": "qcow2",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum_type": "none",
       "iso_urls": [ "http://ftp.de.debian.org/debian-cd/8.3.0/multi-arch/iso-cd/debian-8.3.0-amd64-i386-netinst.iso" ],
       "net_device": "virtio-net",
       "output_directory": "output/{{user `name`}}-qemu/",
