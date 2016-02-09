@@ -29,9 +29,6 @@
       "disk_discard": "unmap",
       "disk_compression": true,
       "iso_skip_cache": true,
-      "floppy_files": [
-          "floppy/*"
-      ],
       "format": "qcow2",
       "headless": true,
       "http_directory": "http",
